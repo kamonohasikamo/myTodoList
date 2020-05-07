@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+.h1_class {
+	border: 5px solid #000000;
+	font-size: 32px;
+	font-weight: bold;
+	margin: 0 0 20px;
+	padding: 15px 20px;
+	text-align: center;
+}
+.h2_class {
+	background: #000000;
+	color: #fff;
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0 0 20px;
+	padding: 10px 20px;
+}
+.h3_class {
+	border-left: 5px solid #000000;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 0 20px;
+	padding:0 0 0 10px;
+}
+.h4_class {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 0 20px;
+}
+
+.todayTarget {
+	position: relative;
+	left: 100px;
+}
+.Required {
+	position: relative;
+	left: 100px;
+}
+
+.Selection {
+	position: relative;
+	left: 100px;
+}
+
+#menu {
+	list-style: none;
+	overflow: hidden;
+}
+
+#menu li {
+	width: 140px;
+	text-align: center;
+	background-color: gray;
+	float: right;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 2px;
+}
+
+#menu li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	padding: 20px;
+}
