@@ -37,6 +37,32 @@ body {
 	position: relative;
 	left: 100px;
 }
+
+.todaysRank {
+	position: relative;
+	margin: 2em 0;
+	padding: 0.5em 1em;
+	border: solid 3px #95ccff;
+	border-radius: 8px;
+	display:inline-block;
+}
+.todaysRank .todaysRank-title {
+	position: absolute;
+	display: inline-block;
+	top: -13px;
+	left: 10px;
+	padding: 0 9px;
+	line-height: 1;
+	font-size: 19px;
+	background: #FFF;
+	color: black;
+	font-weight: bold;
+}
+.todaysRank p {
+	margin: 0;
+	padding: 50px 80px;
+}
+
 .Required {
 	position: relative;
 	left: 100px;

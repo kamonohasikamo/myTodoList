@@ -7,26 +7,20 @@
 		</title>
 		<link rel="stylesheet" href="../css/mainPageCss.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="../js/mainModel.js"></script>
 	</head>
 	<body>
 		<h1 class="h1_class"> <span id="view_time"></span>(今日)の予定</h1>
-		<script type="text/javascript">
-			document.getElementById("view_time").innerHTML = getNow();
-
-			function getNow() {
-				var now = new Date();
-				var year = now.getFullYear();
-				var month = now.getMonth() + 1;
-				var day = now.getDate();
-
-				var nowData = year + "/" + month + "/" + day;
-				return nowData;
-			}
-		</script>
 		
 		<label for="progressBar">進捗:
 			<progress id="progressBar" max="100" value="0"></progress> <div class="todayTodoListClass"></div>
 		</label>
+
+		<div class="todaysRank">
+			<span class="todaysRank-title">今日のランク</span>
+			<p>今日のランクは<span id="todaysRankValue"></span>です！！！</p>
+		</div>
+
 		<ul id="menu">
 			<li><a href="tomorrowPage.html">明日の予定</a> </li>
 			<li><a href="pastPage.html">過去の予定</a></li>
@@ -35,7 +29,7 @@
 		<form name="todayTodoList">
 			<h2 class="h2_class">目標</h2>
 				<p class="todayTarget">
-					ここに今日の目標が書かれています。
+					ここに今日の目標が書かれています。(予定)
 				</p>
 			<h2 class="h2_class">必須項目！</h2>
 				<p class="Required" id="RequiredBox">
@@ -54,20 +48,5 @@
 					<input type="checkbox" name="Selection" value="5" id="5"> test2_5 <br>	
 				</p>
 		</form>
-
-		<script>
-			$(function () {
-				$('input:checkbox').change(function() {
-					var totalCount = document.todayTodoList.Required.length + document.todayTodoList.Selection.length;
-					var RequiredBoxCount = $('#RequiredBox input:checkbox:checked').length;
-					var SelectionBoxCount = $('#SelectionBox input:checkbox:checked').length;
-					var progressPoint = ((RequiredBoxCount + SelectionBoxCount) / totalCount) * 100;
-					$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
-					var a = document.getElementById('progressBar');
-					a.value = progressPoint;
-				}).trigger('change');
-			});
-		</script>
-		
 	</body>
 </html>
