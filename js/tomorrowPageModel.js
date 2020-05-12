@@ -65,3 +65,9 @@ function SelDelForm() {
 		point.removeChild(point.children[childCount - 2]);
 	}
 }
+
+function ClearForm() {
+	var point = document.getElementById("inputTodayTarget");
+
+	point.value = "";
+}

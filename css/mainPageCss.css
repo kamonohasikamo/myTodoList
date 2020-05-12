@@ -63,6 +63,11 @@ body {
 	padding: 50px 80px;
 }
 
+.inputTodayTarget {
+	position: relative;
+	left: 100px;
+}
+
 .Required {
 	position: relative;
 	left: 100px;
@@ -119,6 +124,14 @@ body {
 	margin: 0;
 }
 
+textarea.inputTodayTarget {
+	display: inline-block;
+	width: 75%;
+	height: 100px;
+	padding: 6px 12px;
+	font-size: 14px;
+	color: #555;
+}
 
 input.inputText {
 	display: inline-block;
