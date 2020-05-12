@@ -22,34 +22,22 @@ $(function() {
 		var progressBar = document.getElementById('progressBar');
 		progressBar.value = progressPoint;
 
-		var todaysRankText = "";
-		var todaysRankColorCode;
+		var todaysRankPathNum = 6;
 		if (progressPoint == 100) {
-			todaysRankText = "SS";
-			todaysRankColorCode = "#FFFF00";
+			todaysRankPathNum = 0;
 		} else if (progressPoint >= 90) {
-			todaysRankText = "A";
-			todaysRankColorCode = "#FF0000";
+			todaysRankPathNum = 1;
 		} else if (progressPoint >= 80) {
-			todaysRankText = "B";
-			todaysRankColorCode = "#0000FF";
+			todaysRankPathNum = 2;
 		} else if (progressPoint >= 60) {
-			todaysRankText = "C";
-			todaysRankColorCode = "#00FF00";
+			todaysRankPathNum = 3;
 		} else if (progressPoint >= 40) {
-			todaysRankText = "D";
-			todaysRankColorCode = "#808000";
+			todaysRankPathNum = 4;
 		} else if (progressPoint >= 20) {
-			todaysRankText = "E";
-			todaysRankColorCode = "#808080";
-		} else {
-			todaysRankText = "F";
-			todaysRankColorCode = "#000000";
+			todaysRankPathNum = 5;
 		}
-		var todaysRankValue = document.getElementById("todaysRankValue");
-		todaysRankValue.innerHTML = todaysRankText;
-		todaysRankValue.style.color = todaysRankColorCode;
-		todaysRankValue.style.fontSize = '50px';
+		var rankImage = document.getElementById("todaysRankImage");
+		rankImage.src = "../img/rank_" + todaysRankPathNum + ".png";
 	}).trigger('change');
 });
 
