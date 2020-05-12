@@ -11,7 +11,12 @@
 	</head>
 	<body>
 		<h1 class="h1_class"> <span id="view_time"></span>(今日)の予定</h1>
-		
+
+		<ul id="menu">
+			<li><a href="tomorrowPage.html">明日の予定</a> </li>
+			<li><a href="pastPage.html">過去の予定</a></li>
+		</ul>
+
 		<label for="progressBar">進捗:
 			<progress id="progressBar" max="100" value="0"></progress> <div class="todayTodoListClass"></div>
 		</label>
@@ -20,11 +25,6 @@
 			<span class="todaysRank-title">今日のランク</span>
 			<p>今日のランクは<span id="todaysRankValue"></span>です！！！</p>
 		</div>
-
-		<ul id="menu">
-			<li><a href="tomorrowPage.html">明日の予定</a> </li>
-			<li><a href="pastPage.html">過去の予定</a></li>
-		</ul>
 	
 		<form name="todayTodoList">
 			<h2 class="h2_class">目標</h2>
