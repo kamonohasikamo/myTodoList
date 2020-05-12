@@ -10,14 +10,42 @@ $(function() {
 		var nowData = year + "/" + month + "/" + day;
 		return nowData;
 	}
-
-	$('input:checkbox').change(function() {
-		var totalCount = document.todayTodoList.Required.length + document.todayTodoList.Selection.length;
-		var RequiredBoxCount = $('#RequiredBox input:checkbox:checked').length;
-		var SelectionBoxCount = $('#SelectionBox input:checkbox:checked').length;
-		var progressPoint = ((RequiredBoxCount + SelectionBoxCount) / totalCount) * 100;
-		$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
-		var a = document.getElementById('progressBar');
-		a.value = progressPoint;
-	}).trigger('change');
 });
+
+function ReqAddForm() {
+	var point = document.getElementById("inputRequired");
+
+	var inputText = document.createElement("input");
+	inputText.setAttribute("type", "text");
+	inputText.setAttribute("class", "inputText");
+	inputText.setAttribute("placeholder", "今日の必須目標を書く");
+
+	point.appendChild(inputText);
+}
+
+function ReqDelForm() {
+	var point = document.getElementById("inputRequired");
+	var childCount = point.childElementCount;
+	if(childCount > 1) {
+		point.removeChild(point.children[childCount - 1]);
+	}
+}
+
+function SelAddForm() {
+	var point = document.getElementById("inputSelection");
+
+	var inputText = document.createElement("input");
+	inputText.setAttribute("type", "text");
+	inputText.setAttribute("class", "inputText");
+	inputText.setAttribute("placeholder", "今日の選択必須目標を書く");
+
+	point.appendChild(inputText);
+}
+
+function SelDelForm() {
+	var point = document.getElementById("inputSelection");
+	var childCount = point.childElementCount;
+	if(childCount > 1) {
+		point.removeChild(point.children[childCount - 1]);
+	}
+}

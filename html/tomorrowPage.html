@@ -12,9 +12,6 @@
 	<body>
 		<h1 class="h1_class"> <span id="view_time"></span>(明日)の予定</h1>
 
-		<label for="progressBar">進捗:
-			<progress id="progressBar" max="100" value="0"></progress> <div class="todayTodoListClass"></div>
-		</label>
 		<ul id="menu">
 			<li><a href="mainPage.html">今日の予定</a> </li>
 			<li><a href="pastPage.html">過去の予定</a></li>
@@ -22,20 +19,20 @@
 	
 		<form name="todayTodoList">
 			<h2 class="h2_class">必須項目！</h2>
-				<p class="Required" id="RequiredBox">
-					<input type="checkbox" name="Required" value="1" id="1"> test1_1 <br>
-					<input type="checkbox" name="Required" value="2" id="2"> test1_2 <br>
-					<input type="checkbox" name="Required" value="3" id="3"> test1_3 <br>
-					<input type="checkbox" name="Required" value="4" id="4"> test1_4 <br>
-					<input type="checkbox" name="Required" value="5" id="5"> test1_5 <br>
+				<ul id="addDelButton">
+					<li><input type="button" value="Delete" class="del inputButton" onclick="ReqDelForm()"></li>
+					<li><input type="button" value="Add" class="add inputButton" onclick="ReqAddForm()"></li>
+				</ul>
+				<p class="Required" id="inputRequired">
+					<input type="text" class="inputText" placeholder="今日の必須目標を書く">
 				</p>
 			<h2 class="h2_class">選択必須項目！</h2>
-				<p class="Selection" id=SelectionBox>
-					<input type="checkbox" name="Selection" value="1" id="1"> test2_1 <br>
-					<input type="checkbox" name="Selection" value="2" id="2"> test2_2 <br>
-					<input type="checkbox" name="Selection" value="3" id="3"> test2_3 <br>
-					<input type="checkbox" name="Selection" value="4" id="4"> test2_4 <br>
-					<input type="checkbox" name="Selection" value="5" id="5"> test2_5 <br>	
+				<ul id="addDelButton">
+					<li><input type="button" value="Delete" class="del inputButton" onclick="SelDelForm()"></li>
+					<li><input type="button" value="Add" class="add inputButton" onclick="SelAddForm()"></li>
+				</ul>
+				<p class="Selection" id="inputSelection">
+					<input type="text" class="inputText" placeholder="今日の選択必須目標を書く">
 				</p>
 		</form>
 	</body>

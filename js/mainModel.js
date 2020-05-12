@@ -52,3 +52,4 @@ $(function() {
 		todaysRankValue.style.fontSize = '50px';
 	}).trigger('change');
 });
+
