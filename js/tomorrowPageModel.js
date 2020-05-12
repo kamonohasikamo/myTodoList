@@ -21,13 +21,21 @@ function ReqAddForm() {
 	inputText.setAttribute("placeholder", "今日の必須目標を書く");
 
 	point.appendChild(inputText);
+
+	var inputWeight = document.createElement("input");
+	inputWeight.setAttribute("type", "text");
+	inputWeight.setAttribute("class", "inputWeight");
+	inputWeight.setAttribute("placeholder", "重要度");
+
+	point.appendChild(inputWeight);
 }
 
 function ReqDelForm() {
 	var point = document.getElementById("inputRequired");
 	var childCount = point.childElementCount;
-	if(childCount > 1) {
+	if(childCount > 2) {
 		point.removeChild(point.children[childCount - 1]);
+		point.removeChild(point.children[childCount - 2]);
 	}
 }
 
@@ -40,12 +48,20 @@ function SelAddForm() {
 	inputText.setAttribute("placeholder", "今日の選択必須目標を書く");
 
 	point.appendChild(inputText);
+
+	var inputWeight = document.createElement("input");
+	inputWeight.setAttribute("type", "text");
+	inputWeight.setAttribute("class", "inputWeight");
+	inputWeight.setAttribute("placeholder", "重要度");
+
+	point.appendChild(inputWeight);
 }
 
 function SelDelForm() {
 	var point = document.getElementById("inputSelection");
 	var childCount = point.childElementCount;
-	if(childCount > 1) {
+	if(childCount > 2) {
 		point.removeChild(point.children[childCount - 1]);
+		point.removeChild(point.children[childCount - 2]);
 	}
 }
