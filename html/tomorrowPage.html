@@ -19,28 +19,47 @@
 	
 		<form name="todayTodoList">
 			<h2 class="h2_class">今日の目標！</h2>
-				<ul id="addDelButton">
-					<li><input type="button" value="Clear" class="cle inputButton" onclick="ClearForm()"></li>
+				<ul id="clear">
+					<li><input type="button" value="Clear" class="AddDelButton" onclick="ClearForm()"></li>
 				</ul>
 				<p>
 					<textarea class="inputTodayTarget" placeholder="今日の目標" id="inputTodayTarget"></textarea>
 				</p>
 			<h2 class="h2_class">必須項目！</h2>
-				<ul id="addDelButton">
-					<li><input type="button" value="Delete" class="del inputButton" onclick="ReqDelForm()"></li>
-					<li><input type="button" value="Add" class="add inputButton" onclick="ReqAddForm()"></li>
-				</ul>
-				<p class="Required" id="inputRequired">
-					<input type="text" class="inputText" placeholder="今日の必須目標を書く"><input type="text" class="inputWeight" placeholder="重要度">
-				</p>
+				<table class="Required" id="inputRequired" width="80%">
+					<tr>
+						<th width="85%">内容</th>
+						<th width="5%">重要度</th>
+						<th width="5%"></th>
+						<th width="5%"></th>
+					</tr>
+					<tr>
+						<td><input type="text" class="inputText" placeholder="今日の必須目標を書く"></td>
+						<td><input type="tel" class="inputWeight" placeholder="重要度"></td>
+						<td><input type="button" value="Add" class="AddDelButton" onclick='addForm("inputRequired")'></td>
+						<td><input type="button" value="Delete" class="AddDelButton" onclick="delForm(this)"></td>
+					</tr>
+				</table>
+			
 			<h2 class="h2_class">選択必須項目！</h2>
-				<ul id="addDelButton">
-					<li><input type="button" value="Delete" class="del inputButton" onclick="SelDelForm()"></li>
-					<li><input type="button" value="Add" class="add inputButton" onclick="SelAddForm()"></li>
-				</ul>
-				<p class="Selection" id="inputSelection">
-					<input type="text" class="inputText" placeholder="今日の選択必須目標を書く"><input type="text" class="inputWeight" placeholder="重要度">
-				</p>
+				<table class="Selection" id="inputSelection" width="80%">
+					<tr>
+						<th width="85%">内容</th>
+						<th width="5%">重要度</th>
+						<th width="5%"></th>
+						<th width="5%"></th>
+					</tr>
+					<tr>
+						<td><input type="text" class="inputText" placeholder="今日の選択必須目標を書く"></td>
+						<td><input type="tel" class="inputWeight" placeholder="重要度"></td>
+						<td><input type="button" value="Add" class="AddDelButton" onclick='addForm("inputSelection")'></td>
+						<td><input type="button" value="Delete" class="AddDelButton" onclick="delForm(this)"></td>
+					</tr>
+				</table>
 		</form>
+
+		<footer>
+			<input type="button" value="目標設定" class="AddDelButton" onclick="setTomorrowTarget()">
+		</footer>
 	</body>
 </html>
