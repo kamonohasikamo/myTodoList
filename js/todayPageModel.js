@@ -13,15 +13,22 @@ $(function() {
 
 	$('input:checkbox').change(function() {
 		var totalCount = document.todayTodoList.Required.length + document.todayTodoList.Selection.length;
-		var RequiredBoxCount = $('#RequiredBox input:checkbox:checked').length;
-		var SelectionBoxCount = $('#SelectionBox input:checkbox:checked').length;
+		var RequiredBoxCount = $('#todayRequired input:checkbox:checked').length;
+		var SelectionBoxCount = $('#todaySelection input:checkbox:checked').length;
 		var progressPoint = ((RequiredBoxCount + SelectionBoxCount) / totalCount) * 100;
 
 		$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
 
 		var progressBar = document.getElementById('progressBar');
-		progressBar.value = progressPoint;
+		progressBar.value = 10;//progressPoint;
 
+		var todaysRankPathNum = getTodayRankPathNum(progressPoint);
+		
+		var rankImage = document.getElementById("todaysRankImage");
+		rankImage.src = "../img/rank_" + todaysRankPathNum + ".png";
+	}).trigger('change');
+
+	function getTodayRankPathNum(progressPoint) {
 		var todaysRankPathNum = 6;
 		if (progressPoint == 100) {
 			todaysRankPathNum = 0;
@@ -36,8 +43,7 @@ $(function() {
 		} else if (progressPoint >= 20) {
 			todaysRankPathNum = 5;
 		}
-		var rankImage = document.getElementById("todaysRankImage");
-		rankImage.src = "../img/rank_" + todaysRankPathNum + ".png";
-	}).trigger('change');
+		return todaysRankPathNum;
+	}
 });
 
