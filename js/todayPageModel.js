@@ -34,7 +34,7 @@ $(function() {
 		$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
 
 		var progressBar = document.getElementById('progressBar');
-		progressBar.value = progressPoint;
+		progressBar.value = 10;//progressPoint;
 
 		var todaysRankPathNum = getTodayRankPathNum(progressPoint);
 		
