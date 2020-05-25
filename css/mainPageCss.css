@@ -198,3 +198,37 @@ input[type=checkbox] {
 #todayRequired td, #todaySelection td {
 	border: solid 1px #ccc;
 }
+
+/* past Page Settings */
+.pastDateSelectLabel {
+	text-align: center;
+	margin: 0 auto;
+}
+
+input[type="date"] {
+	position: relative;
+	padding: 0 10px;
+	width: 200px;
+	height: 36px;
+	border: 2px solid #ccc;
+	border-radius: 15px;
+	background: transparent;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #999;
+}
+
+input.pastDateSelectFormButton {
+	list-style: none;
+	overflow: hidden;
+	width: 80px;
+	height: 60px;
+	text-align: center;
+	line-height: 40px;
+	margin-right: 2px;
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 5px;
+	padding: 0;
+	margin: 0;
+}

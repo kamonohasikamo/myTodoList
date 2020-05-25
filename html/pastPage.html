@@ -17,9 +17,13 @@
 			<li><a href="tomorrowPage.html">明日の予定</a></li>
 		</ul>
 
-		<label for="progressBar">進捗:
-			<progress id="progressBar" max="100" value="0"></progress> <div class="todayTodoListClass"></div>
-		</label>
+		<form class="pastDateSelectLabel">
+			<label>
+				見たい日付を選択：<input type="date" name="pastDateSelect" id="pastDateSelectId">
+				<input type="button" value="決定！" class="pastDateSelectFormButton" onclick="onPressPastDateSelectButton()">
+			</label>
+		</form>
+		<br>
 
 		<form name="todayTodoList">
 			<h2 class="h2_class">必須項目！</h2>

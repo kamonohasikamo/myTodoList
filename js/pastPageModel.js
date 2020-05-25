@@ -7,21 +7,21 @@ $(function() {
 		var month = now.getMonth() + 1;
 		var day = now.getDate();
 
+		setPastDateSelect(year, month, day);
+
 		var nowData = year + "/" + month + "/" + day;
 		return nowData;
 	}
-
-	$('input:checkbox').change(function() {
-		var totalCount = document.todayTodoList.Required.length + document.todayTodoList.Selection.length;
-		var RequiredBoxCount = $('#RequiredBox input:checkbox:checked').length;
-		var SelectionBoxCount = $('#SelectionBox input:checkbox:checked').length;
-		var progressPoint = ((RequiredBoxCount + SelectionBoxCount) / totalCount) * 100;
-		
-		$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
-		
-		var progressBar = document.getElementById('progressBar');
-		progressBar.value = progressPoint;
-		
-		$('div.todaysRank').text('');
-	}).trigger('change');
+	
+	function setPastDateSelect(yyyy, month, day) {
+		var mm = ("0"+(month)).slice(-2);
+		var dd = ("0"+day).slice(-2);
+		document.getElementById("pastDateSelectId").value = yyyy + '-' + mm + '-' + dd;
+	}
 });
+
+function onPressPastDateSelectButton() {
+	var selectDate = document.getElementById("pastDateSelectId").value;
+	console.log("setDate = " + selectDate);
+}
+
