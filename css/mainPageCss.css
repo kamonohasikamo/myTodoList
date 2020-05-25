@@ -172,3 +172,29 @@ input.inputWeight {
 	font-size: 14px;
 	color: #555;
 }
+
+input[type=checkbox] {
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#todayRequired, #todaySelection {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+
+#todayRequired th, #todaySelection th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid gray;
+	background: black;
+	color: #fff;
+}
+
+#todayRequired td, #todaySelection td {
+	border: solid 1px #ccc;
+}

@@ -1,3 +1,9 @@
+// 今日の進捗を管理するオブジェクト
+var todaysTotalScore = {
+	"check" : 0,
+	"total" : 0,
+};
+
 $(function() {
 	document.getElementById("view_time").innerHTML = getNow();
 
@@ -11,17 +17,55 @@ $(function() {
 		return nowData;
 	}
 
+	// 一旦すべてnoCheckとしてスコアをカウントする。
+	todayScoreCount();
+
 	$('input:checkbox').change(function() {
-		var totalCount = document.todayTodoList.Required.length + document.todayTodoList.Selection.length;
-		var RequiredBoxCount = $('#RequiredBox input:checkbox:checked').length;
-		var SelectionBoxCount = $('#SelectionBox input:checkbox:checked').length;
-		var progressPoint = ((RequiredBoxCount + SelectionBoxCount) / totalCount) * 100;
+		if (this.checked) {
+			todaysTotalScore.check += Number(this.parentNode.parentNode.children[2].innerHTML);
+		} else {
+			if (todaysTotalScore.check > 0) {
+				todaysTotalScore.check -= Number(this.parentNode.parentNode.children[2].innerHTML);
+			}
+		}
+
+		var progressPoint = (todaysTotalScore.check / todaysTotalScore.total) * 100;
 
 		$('div.todayTodoListClass').text('進捗は' + progressPoint + '%です。');
 
 		var progressBar = document.getElementById('progressBar');
 		progressBar.value = progressPoint;
 
+		var todaysRankPathNum = getTodayRankPathNum(progressPoint);
+		
+		var rankImage = document.getElementById("todaysRankImage");
+		rankImage.src = "../img/rank_" + todaysRankPathNum + ".png";
+	}).trigger('change');
+
+	// 一旦すべてnoCheckとしてスコアをカウントする。
+	function todayScoreCount() {
+		clearTodayTotalScore();
+		var table = document.getElementById("todayRequired");
+		var length = table.rows.length;
+		for (var i = 1; i < length; i++) {
+			todaysTotalScore.total += Number(table.rows[i].cells[2].innerHTML);
+		}
+
+		table = document.getElementById("todaySelection");
+		length = table.rows.length;
+		for (var i = 1; i < length; i++) {
+			todaysTotalScore.total += Number(table.rows[i].cells[2].innerHTML);
+		}
+
+		return;
+	}
+
+	function clearTodayTotalScore() {
+		todaysTotalScore.total = 0;
+		todaysTotalScore.check = 0;
+	}
+
+	function getTodayRankPathNum(progressPoint) {
 		var todaysRankPathNum = 6;
 		if (progressPoint == 100) {
 			todaysRankPathNum = 0;
@@ -36,8 +80,6 @@ $(function() {
 		} else if (progressPoint >= 20) {
 			todaysRankPathNum = 5;
 		}
-		var rankImage = document.getElementById("todaysRankImage");
-		rankImage.src = "../img/rank_" + todaysRankPathNum + ".png";
-	}).trigger('change');
+		return todaysRankPathNum;
+	}
 });
-

@@ -18,7 +18,7 @@
 		</ul>
 
 		<label for="progressBar">進捗:
-			<progress id="progressBar" max="100" value="0"></progress> <div class="todayTodoListClass"></div>
+			<progress id="progressBar" max="100" value="0" width="30px" height="30px"></progress> <div class="todayTodoListClass"></div>
 		</label>
 
 		<div class="todaysRank">
@@ -32,21 +32,40 @@
 					ここに今日の目標が書かれています。(予定)
 				</p>
 			<h2 class="h2_class">必須項目！</h2>
-				<p class="Required" id="RequiredBox">
-					<input type="checkbox" name="Required" value="1" id="1"> test1_1 <br>
-					<input type="checkbox" name="Required" value="2" id="2"> test1_2 <br>
-					<input type="checkbox" name="Required" value="3" id="3"> test1_3 <br>
-					<input type="checkbox" name="Required" value="4" id="4"> test1_4 <br>
-					<input type="checkbox" name="Required" value="5" id="5"> test1_5 <br>
-				</p>
+				<table class="Required" id="todayRequired" width="80%" cellpadding="5">
+					<tr>
+						<th width="1%"></th>
+						<th width="94%">内容</th>
+						<th width="5%">重要度</th>
+					</tr>
+					<tbody id="required-body">
+						<tr>
+							<td><input type="checkbox" name="Required"></td>
+							<td>aiueo</td>
+							<td align="right">250</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="Required"></td>
+							<td>sasi</td>
+							<td align="right">250</td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
 			<h2 class="h2_class">選択必須項目！</h2>
-				<p class="Selection" id=SelectionBox>
-					<input type="checkbox" name="Selection" value="1" id="1"> test2_1 <br>
-					<input type="checkbox" name="Selection" value="2" id="2"> test2_2 <br>
-					<input type="checkbox" name="Selection" value="3" id="3"> test2_3 <br>
-					<input type="checkbox" name="Selection" value="4" id="4"> test2_4 <br>
-					<input type="checkbox" name="Selection" value="5" id="5"> test2_5 <br>	
-				</p>
+				<table class="Selection" id="todaySelection" width="80%" cellpadding="5">
+					<tr>
+						<th width="1%"></th>
+						<th width="94%">内容</th>
+						<th width="5%">重要度</th>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="Selection"></td>
+						<td>kakikukeko</td>
+						<td align="right">500</td>
+					</tr>
+				</table>
+				<br>
 		</form>
 	</body>
 </html>

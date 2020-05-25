@@ -29,7 +29,6 @@ function ClearForm() {
 	point.value = "";
 }
 
-
 function addForm(elementTag) {
 	var point = document.getElementById(elementTag);
 
